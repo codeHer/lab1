@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta Firstname="description" content="DC Comics Characters">
+		<meta Firstname="keywords" content="HTML,CSS,XML,JavaScript">
+		<meta Firstname="author" content="Sahasha Reese">
+		<meta Firstname="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DC Comics Characters</title>
+		<style>
+			table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				width: 100%;
+			}
+
+			td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+			}
+
+			tr:nth-child(even) {
+				background-color: #dddddd;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h1>Lab1: Working with JSON</h1>
+		<h2>Data Virtualization</h2>		
+		<p>For this lab, you find some data and format it into JSON objects.</p> 
+		<p>Using decision making logic, iteration and "and/or" logic with JSON, to discover information about your data.</p>
+
+		<div id="output"></div>
+		<h1>Average Popularity Rank</h1>
+		<p>Below: Average popularity ranking for the 25 collective DC Comic characters included in the data pool.</p>
+		<div id="meanRanking"></div>
+		<script src="lab1.js"></script>
+		<script>
+		var output = "";
+		var output = "<table>" + "<tr>" + "<th> Character </th>" + "<th> Type </th>" + "<th> Rank </th>" + "<th> Power </th>";
+		for(var a = 0; a < persona.length; a++){
+			var Character = persona[a].Character ;
+			var Type = persona[a].Type ;
+			var Rank = persona[a].Rank;
+			var Power = persona[a].Power;
+			output += '<tr>' + '<td>' + Character + '</td>' + '<td>' + Type + '</td>' + '<td>' + Rank + '</td>' + '<td>' + Power + '</td>' + '</tr>';
+		}
+		
+		
+		output += "</table>";
+			document.getElementById("output").innerHTML = output;
+			
+		let mean = 0;
+		var b = 0;
+		var meanRank = 0;
+		while( b < persona.length){
+			mean += persona[b].Rank;
+			meanRank = mean / persona.length;
+			b++;
+		}	
+		document.getElementById("mean").innerHTML = Math.floor(meanRank);
+		</script>
+	</body>
+</html>
