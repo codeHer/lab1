@@ -6,8 +6,32 @@
 		<meta Firstname="keywords" content="HTML,CSS,XML,JavaScript">
 		<meta Firstname="author" content="Sahasha Reese">
 		<meta Firstname="viewport" content="width=device-width, initial-scale=1.0">
+</head>		
+		
 		<title>DC Comics Characters</title>
 		<style>
+			.outer {
+				width: 50px;
+				height: 50px;
+				color: black;
+				background-color: #dddddd;
+				border-collapse: collapse;
+				padding: 10px;
+			 }
+			.inner {
+				width: 35px;
+				height: 35px;
+				font-color: black;
+				font-weight: bold;
+				text-align: center;	
+				background-color: #E7DFFF;
+				border-collapse: collapse;
+				padding: 5px;
+			 }
+			.chart{
+				border: 2px solid #dddddd;
+				<!--border: 2px solid #E7DFFF;-->
+			}
 			table {
 				font-family: arial, sans-serif;
 				border-collapse: collapse;
@@ -15,13 +39,13 @@
 			}
 
 			td, th {
-				border: 1px solid #dddddd;
+				border: 1px solid #E7DFFF;
 				text-align: left;
 				padding: 8px;
 			}
 
 			tr:nth-child(even) {
-				background-color: #dddddd;
+				background-color: #E7DFFF;
 			}
 		</style>
 	</head>
@@ -35,7 +59,13 @@
 		<div id="output"></div>
 		<h1>Average Popularity Rank</h1>
 		<p>Below: Average popularity ranking for the 25 collective DC Comic characters included in the data pool.</p>
-		<div id="meanRanking"></div>
+		
+		<div class="outer">
+		<div id="mean" class="inner"></div>
+		</div>
+		<br>
+		<div id="chart-container" class="chart"></div>
+		
 		<script src="lab1.js"></script>
 		<script>
 		var output = "";
@@ -61,6 +91,7 @@
 			b++;
 		}	
 		document.getElementById("mean").innerHTML = Math.floor(meanRank);
+
 		</script>
 	</body>
 </html>
